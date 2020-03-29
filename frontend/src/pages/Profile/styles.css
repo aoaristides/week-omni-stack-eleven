@@ -5,6 +5,11 @@
     margin: 32px auto;
 }
 
+.profile-container h1 {
+    margin-top: 60px;
+    margin-bottom: 32px;
+}
+
 .profile-container header {
     display: flex;
     align-items: center;
