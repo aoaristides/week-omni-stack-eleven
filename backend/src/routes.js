@@ -16,7 +16,7 @@ routes.post('/ongs', celebrate({
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
         email: Joi.string().required().email(),
-        whatsapp: Joi.number().required().min(10).max(11),
+        whatsapp: Joi.string().required().min(10).max(11),
         city: Joi.string().required(),
         uf: Joi.string().required().length(2)
     })
@@ -35,7 +35,7 @@ routes.get('/incidents', celebrate({
 }), IncidentController.list);
 
 routes.post('/incidents', celebrate({
-    [Segments.HEADERS]: oi.object({
+    [Segments.HEADERS]: Joi.object({
         authorization: Joi.string().required()
     }).unknown(),
     [Segments.BODY]: Joi.object().keys({
